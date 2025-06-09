@@ -15,7 +15,7 @@ exports.register = async (req, res) => {
     res.cookie('token', token, {
       httpOnly: true,
       secure: true,
-      sameSite: 'lax',
+      sameSite: 'none',
       maxAge: 24 * 60 * 60 * 1000
     });
     res.status(201).json({ message: 'User registered and logged in successfully.' });
@@ -36,7 +36,7 @@ exports.login = async (req, res) => {
     res.cookie('token', token, {
       httpOnly: true,
       secure: true,
-      sameSite: 'lax',
+      sameSite: 'none',
       maxAge: 24 * 60 * 60 * 1000
     });
     res.json({ success: true, message: 'Login successful.' });
