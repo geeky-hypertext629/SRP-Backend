@@ -8,7 +8,8 @@ router.post('/login', authController.login);
 router.get('/profile', authenticateToken, authController.profile);
 router.post('/logout', authController.logout);
 router.get('/check-auth', authenticateToken, (req, res) => {
-  res.json({ authenticated: true });
+  // res.json({ authenticated: true });
+  res.status(200).json({ authenticated: true });
 });
 
 module.exports = router; 
